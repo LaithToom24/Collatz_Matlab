@@ -1,0 +1,17 @@
+clc;clear;
+
+a = 2;
+n = 20;
+inputs = a.^(1:n);
+
+[sequences, durations, converged] = vectorized_collatz(inputs, 100);
+
+fig = figure(Theme="light");
+plot(sequences');
+title(sprintf("Sequences for Inputs of %d^1 to %d^%d", a));
+ylabel("Value");
+xlabel("Step");
+xlim([1 max(durations)])
+saveas(fig, sprintf("collatz_for_powers_of_%d.png", a))
+
+

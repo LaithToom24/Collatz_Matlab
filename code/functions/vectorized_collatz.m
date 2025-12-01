@@ -33,5 +33,6 @@ while (i < maxSize)
 end
 
 converged = num == 1;
+sequences = sequences(:, 1:max(steps)+1);
 
 end
